@@ -10,4 +10,30 @@ config:
   #   server: SEE BELOW
   #   php: SEE BELOW
   #   database: SEE BELOW
-  #   vhosts: SEE BELOW
+  #   vhosts: SEE BELOWgit remote -v
+  
+services: # Define your services
+  appserver:  # Create a web server container
+    type: php:7.3 # Specify what version of php to use
+    via: nginx   # This could be nginx, should you choose so
+    webroot: .  # Specify webroot
+    config:  # If you want to add/edit
+      #server: config/apache/lamp.conf  # Use an alternate apache config file
+      #conf: path/from/app/root/php.ini # Alter php configuration with a custom file
+  database:  # Create a database server container
+    type: mysql
+    portforward: 3308
+    creds:  # Specify what creds/db to use
+      user: crud
+      password: crud
+      database: crud
+  phpmyAdmin:
+    type: phpmyadmin
+    user: crud
+    password: crud
+    database: crud
+    hosts:
+      - crud
+  mysql57:
+    type: mysql:5.7
+  
