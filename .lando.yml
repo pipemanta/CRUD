@@ -1,0 +1,13 @@
+name: crud-training
+recipe: lemp
+config:
+  php: '7.3'
+  composer_version: '2.0.3'
+  webroot: .
+  database: mysql:5.7
+  xdebug: false
+  # config:
+  #   server: SEE BELOW
+  #   php: SEE BELOW
+  #   database: SEE BELOW
+  #   vhosts: SEE BELOW
