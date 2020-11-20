@@ -1,6 +1,6 @@
 <?php
 // used to connect to the database
-$host = "localhost";
+$host = "mysql57"; //"localhost"; //"127.0.0.1";
 $db_name = "php_beginner_crud_level_1";
 $username = "root";
 $password = "";
